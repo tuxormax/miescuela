@@ -12,8 +12,8 @@ function comprobarconfig()
 	$band=0;
 	$ruta = "php/";
 	$arch = "config.php";
-	$dir = opendir($ruta) or die ("no se puede abrir el directorio");
-	while($archivo = readdir($dir)) 
+	$dir = @opendir($ruta);
+	while($archivo = @readdir($dir)) 
 	  {
 		if($archivo == $arch) 
 		{
@@ -24,7 +24,7 @@ function comprobarconfig()
 	{
 		$ruta = "instalacion/";
 		$arch = "instalar.html";
-		$dir = opendir($ruta) or die ("no se puede abrir el directorio");
+		$dir = opendir($ruta) or die ("<p class='noticia'>No se puede abrir el directorio</p>");
 		while($archivo = readdir($dir)) 
 		{
 			if($archivo == $arch) 
@@ -34,21 +34,28 @@ function comprobarconfig()
 		}
 	}
 return $band;
-}//fin comprobarinstalar
+}
 
 $bandera=comprobarconfig();
 
-//echo "Valor de bandera:". $bandera;
-
-
 if($bandera==1) 
 {
-	include(__DIR__. '/html/login.html');
+	/*
+	 * Ejecutamos el login
+	 *
+	 * ~miescuela 2/1/2014
+	 */
+	@include(__DIR__. '/html/login.html');
 }
 
 else if($bandera==2) 
 {
-	include(__DIR__. '/instalacion/instalar.html');
+	/*
+	 * Ejecutamos la instalación
+	 *
+	 * ~miescuela 2/1/2014
+	 */
+	@include(__DIR__. '/instalacion/instalar.html');
 }
 
 else if ($bandera==0) 
