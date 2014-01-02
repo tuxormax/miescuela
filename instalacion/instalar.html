@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Asistente de Instalacion</title>
+								   
+  </head>
+
+  <body>
+
+    <div class="container">
+	<div id="flotante"></div>
+   <form class="form-signin" action="instalacion/instalacion.php" method="POST" onSubmit="return validacion();">
+               	<tr>
+				<td>INSTALACION<br><br></td> 
+				</tr>
+               <tr>
+               	<td class="letras"   colspan="2">Correo Root:</td>
+                <td><input type="text" placeholder="" name="CorreoRoot" id="CorreoRoot" name="CorreoRoot" /></td>
+               </tr>
+               <tr>
+                <td class="letras" colspan="2">Nombre del Host:</td>
+                <td><input type="text" class="input-block-level" placeholder="" id="NombreHost" name="NombreHost" /></td>
+               </tr>
+               <tr>
+                <td class="letras" colspan="2">Nombre Base de Datos:</td>
+                <td><input type="text" class="input-block-level" placeholder="" id="NombreBD" name="NombreBD" /></td>
+               </tr>
+                <tr>
+                <td class="letras" colspan="2">Usuario Base de Datos:</td>
+                <td><input type="text" class="input-block-level" placeholder="" id="UsuarioBD" name="UsuarioBD" /></td>
+               </tr>
+			     <tr>
+               <td class="letras"  colspan="2">Contrase&ntilde;a Usuario B.D.</td>
+                <td><input type="password" placeholder="" maxlength="12" class="largo" id="ContraUsuBD" name="ContraUsuBD" /><br></td>
+               </tr>         
+      <div align="center">
+	    <button class="btn btn-large btn-primary" type="submit">Aceptar</button>
+		</div>
+      </form>
+    </div> <!-- /container -->
+
+  </body>
+</html>
