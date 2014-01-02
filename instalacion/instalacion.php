@@ -17,7 +17,7 @@ $filename = 'instalarmysql.sql';
 @$CONTRAUSUBD = md5($contrausubd);
 @$correo = $_POST["CorreoRoot"]
 if(@$nombrebd == "") {
-  include("ingresar.html");
+  echo "llene todos los campos";
 }
 else {
 crearconfig($usuariobd,$CONTRAUSUBD,$nombrebd,$nombrehost);
