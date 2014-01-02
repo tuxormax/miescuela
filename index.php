@@ -3,6 +3,12 @@
 
 function comprobarconfig() 
 {
+	/*
+	 * Función para comprobar la configuración
+	 * existente del usuario
+	 *
+	 * ~miescuela 2/1/2014
+	 */
 	$band=0;
 	$ruta = "php/";
 	$arch = "config.php";
@@ -14,7 +20,7 @@ function comprobarconfig()
 			$band= 1;
 		}
 	}
-	if(band==0)
+	if($band==0)
 	{
 		$ruta = "instalacion/";
 		$arch = "instalar.html";
