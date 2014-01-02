@@ -27,7 +27,7 @@
 	  echo "llene todos los campos";
 	}
 	else {
-	crearconfig($usuariobd,$CONTRAUSUBD,$nombrebd,$nombrehost);
+	@crearconfig($usuariobd,$CONTRAUSUBD,$nombrebd,$nombrehost);
 
 	mysql_connect($nombrehost, $usuariobd, $CONTRAUSUBD) or die('Error connecting to MySQL server: ' . mysql_error());
 	// Seleccionar DB
