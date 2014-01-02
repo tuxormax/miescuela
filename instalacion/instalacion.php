@@ -6,13 +6,13 @@
 	 * ~miescuela 2/1/2014
 	 */
 	 
-function crearconfig($usuariobd,$contrausubd,$nombrebd,$nombrehost) {
+
 	$nombre_temp = tempnam("php/", "");  //creacion del archivo
 	$gestor = fopen($nombre_temp, "w");  //abre el directorio
 
-	fwrite($gestor,"<?php\n \$dbuser = '".$usuariobd."';\n \$dbpass = '".$contrausubd."';\n \$dbname = '".$nombrebd."';\n \$host = '".$nombrehost."';\n?>");
+	@fwrite($gestor,"<?php\n \$dbuser = '".$usuariobd."';\n \$dbpass = '".$contrausubd."';\n \$dbname = '".$nombrebd."';\n \$host = '".$nombrehost."';\n?>");
 	fclose($gestor); //cerrar edicion
-	rename($nombre_temp,"php/config.php");
+	@rename($nombre_temp,"php/config.php");
 
 	// Nombre del archivo
 	$filename = 'instalarmysql.sql';
@@ -68,5 +68,5 @@ function crearconfig($usuariobd,$contrausubd,$nombrebd,$nombrehost) {
 
 
 
-}
+
   ?>
