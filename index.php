@@ -14,7 +14,7 @@ function comprobarconfig()
 			$band= 1;
 		}
 	}
-	if(band==0)
+	if($band==0)
 	{
 		$ruta = "instalacion/";
 		$arch = "instalar.html";
